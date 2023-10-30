@@ -21,4 +21,15 @@
     </main>
     <x-footer></x-footer>
 </body>
+@if(request()->has('confirm'))
+    @if(request()->boolean('confirm'))
+        <script>
+            alert('Your booking have been succesfully added! Check your email')
+        </script>
+    @else
+        <script>
+            alert('Error making the booking, try again in a few minutes please')
+        </script>
+    @endif
+@endif
 </html>

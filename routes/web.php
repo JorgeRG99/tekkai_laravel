@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\SchedulesController;
+use App\Http\Controllers\BookingsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('/');
 
 Route::get('/about', function () {
     return view('about');
@@ -24,3 +26,7 @@ Route::get('/about', function () {
 Route::get('/booking', function () {
     return view('bookings');
 });
+
+Route::post('/getBookings', [SchedulesController::class, 'getCurrentBookingsSchedule']);
+
+Route::post('/addBooking', [BookingsController::class, 'addBooking'])->name('addBooking');

@@ -1,0 +1,98 @@
+:root {
+    --fc-button-bg-color: #b70614ab;
+    --fc-button-hover-bg-color: #c10b1a;
+    --fc-button-hover-border-color: #8f121c;
+    --fc-button-active-bg-color: #b70614ab;
+    --fc-button-active-border-color: none;
+
+    --fc-highlight-color: rgba(0, 255, 145, 0.744);
+    --fc-today-bg-color: rgba(40, 226, 255, 0.499);
+  }
+
+
+.fc-view-harness {
+    background-color: white;
+}
+
+.fc-toolbar-chunk > h2 {
+    color: white;
+    font-weight: 200;
+}
+
+.fc-button {
+    width: auto;
+}
+
+#date_selector {
+    width: 40%;
+    font-family: 'Roboto';
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+}
+
+#make_booking_btn {
+    width: 26%;
+    height: 2.6em;
+}
+
+#hours-box {
+    padding: 4vh 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#hours-box > button{
+    margin: 0;
+}
+
+#hours-box > p{
+    color: white;
+}
+
+#hours-box > select{
+    background-color: transparent;
+    color: white;
+    font-family: 'Roboto';
+    padding: .8vh 0;
+    border: 1px solid white;
+    border-radius: .3em;
+    font-size: 1em;
+    font-weight: 200;
+    letter-spacing: .1em;
+    width: 17%;
+    text-align: center;
+}
+
+.slide-out-right {
+	-webkit-animation: slide-out-right .8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: slide-out-right .8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+ @-webkit-keyframes slide-out-right {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateX(1000px);
+              transform: translateX(1000px);
+      opacity: 0;
+    }
+  }
+  @keyframes slide-out-right {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateX(1000px);
+              transform: translateX(1000px);
+      opacity: 0;
+      display: none;
+    }
+  }
+  

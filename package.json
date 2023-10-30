@@ -10,5 +10,9 @@
         "laravel-vite-plugin": "^0.8.0",
         "sass": "^1.69.0",
         "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "@fullcalendar/interaction": "^6.1.9",
+        "fullcalendar": "^6.1.9"
     }
 }
