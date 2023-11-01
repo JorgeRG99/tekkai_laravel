@@ -1,3 +1,5 @@
+import { addBooking } from './addBooking'
+
 const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 // TODO -> mostrar las horas disponibles en ese dia
 const HOURS = ['13:00:00', '13:30:00', '14:00:00', '14:30:00', '15:00:00', '15:30:00']
@@ -42,19 +44,13 @@ let change_form = (selectedDate) => {
             booking_form_sec.classList.add('visible_form')
 
             form_submit.addEventListener('click', () => {
-                form.setAttribute('onsubmit',`return ${emailValidation()};`)
+                if (emailValidation() === true) {
+                    addBooking(csrfToken)
+                }
             })
-            
+
         });
     })
-}
-
-let getCurrentDate = () => {
-    let day = currentDate.getDate()
-    let month = currentDate.getMonth() + 1
-    let year = currentDate.getFullYear()
-
-    return `${year}-${month}-${day}`
 }
 
 let removePreviousHours = () => {
@@ -112,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
-        initialDate: getCurrentDate(),
+        initialDate: new Date().toJSON().slice(0, 10),
         selectable: true,
         dateClick: (info) => {
             if (info.date <= currentDate) {
